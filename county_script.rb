@@ -26,7 +26,7 @@ county_alias.each_with_index do |num, index|
 end
 county_alias.reverse!
 
-# Print the data.
+# Print the data to the console.
 puts response_array[2].strip
 county_alias.each_with_index do |county, index|
   puts "#{response_array[county]}: #{response_array[num_alias[index]]}"
