@@ -1,7 +1,7 @@
 require 'pry'
 
 # Read the http response body
-file = File.open("./responses/firearm").read()
+file = File.open("./responses/2018-municipal").read()
 
 # Find the array containing all counties, offenses, and numbers.
 # Clean it up and make it a usable array.
@@ -26,8 +26,12 @@ county_alias.each_with_index do |num, index|
 end
 county_alias.reverse!
 
+# Find the name of the selected offense.
+offense = response_array[index_matches.first.first.to_i]
+
 # Print the data to the console.
 puts response_array[2].strip
+puts offense
 county_alias.each_with_index do |county, index|
   puts "#{response_array[county]}: #{response_array[num_alias[index]]}"
 end
